@@ -132,9 +132,9 @@ You can see exactly which states allow transitioning to `confirming-publish`. Th
 
 I've built a live demo with both approaches side-by-side:
 
-**[View Demo →](https://johntcosta.github.io/state-machine-blog-post/)**
+**[View Demo →](https://costajohnt.github.io/state-machine-blog-post/)**
 
-**[View Source →](https://github.com/johntcosta/state-machine-blog-post)**
+**[View Source →](https://github.com/costajohnt/state-machine-blog-post)**
 
 Interact with both editors. Notice how the "After" version displays its current state — you always know exactly what's happening.
 

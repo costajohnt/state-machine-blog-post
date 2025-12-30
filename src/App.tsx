@@ -90,7 +90,7 @@ function App() {
         </p>
         <p>
           <a
-            href="https://github.com/johntcosta/state-machine-blog-post"
+            href="https://github.com/costajohnt/state-machine-blog-post"
             target="_blank"
             rel="noopener noreferrer"
           >
