@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 
 /**
  * BEFORE: The Boolean Soup Approach
@@ -19,7 +19,7 @@ export function PostEditorBefore() {
   const [originalTitle, setOriginalTitle] = useState('');
   const [originalContent, setOriginalContent] = useState('');
 
-  const [isLoading, setIsLoading] = useState(false);
+  const [isLoading] = useState(false);
   const [isSaving, setIsSaving] = useState(false);
   const [isPublishing, setIsPublishing] = useState(false);
   const [hasError, setHasError] = useState(false);
@@ -29,7 +29,7 @@ export function PostEditorBefore() {
   const [showDiscardModal, setShowDiscardModal] = useState(false);
   const [showSuccessMessage, setShowSuccessMessage] = useState(false);
 
-  const [isDirty, setIsDirty] = useState(false);
+  const [_isDirty, setIsDirty] = useState(false);
   const [lastSavedAt, setLastSavedAt] = useState<Date | null>(null);
 
   // Derived state - but we have to remember to check this everywhere
@@ -221,7 +221,7 @@ export function PostEditorBefore() {
 }
 
 // Fake API functions
-const fakeSaveApi = (post: Post): Promise<void> =>
+const fakeSaveApi = (_post: Post): Promise<void> =>
   new Promise((resolve, reject) => {
     setTimeout(() => {
       if (Math.random() > 0.1) resolve();
@@ -229,7 +229,7 @@ const fakeSaveApi = (post: Post): Promise<void> =>
     }, 1000);
   });
 
-const fakePublishApi = (post: Post): Promise<void> =>
+const fakePublishApi = (_post: Post): Promise<void> =>
   new Promise((resolve, reject) => {
     setTimeout(() => {
       if (Math.random() > 0.1) resolve();

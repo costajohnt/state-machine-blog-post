@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 
 /**
  * AFTER: The State Machine Approach
@@ -438,7 +438,7 @@ export function PostEditorAfter() {
 // FAKE API
 // ============================================================================
 
-const fakeSaveApi = (post: PostData): Promise<void> =>
+const fakeSaveApi = (_post: PostData): Promise<void> =>
   new Promise((resolve, reject) => {
     setTimeout(() => {
       if (Math.random() > 0.1) resolve();
@@ -446,7 +446,7 @@ const fakeSaveApi = (post: PostData): Promise<void> =>
     }, 1000);
   });
 
-const fakePublishApi = (post: PostData): Promise<void> =>
+const fakePublishApi = (_post: PostData): Promise<void> =>
   new Promise((resolve, reject) => {
     setTimeout(() => {
       if (Math.random() > 0.1) resolve();
