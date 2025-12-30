@@ -81,7 +81,7 @@ function App() {
         <p>
           Read the full blog post:{' '}
           <a
-            href="https://johntcosta.hashnode.dev/"
+            href="https://johntcosta.hashnode.dev/modeling-react-state-as-a-finite-state-machine"
             target="_blank"
             rel="noopener noreferrer"
           >

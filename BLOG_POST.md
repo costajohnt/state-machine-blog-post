@@ -4,10 +4,9 @@
 
 ---
 
-In [Building a Traffic Light React App](https://johntcosta.hashnode.dev/building-a-traffic-light-react-app), I explored how naming states by their **business meaning** rather than their visual representation makes state machines more maintainable. Instead of `red-light-green-arrow`, we used `PriorityStraight` — a domain concept that scales as complexity grows.
+Back in 2022, I wrote [Building a Traffic Light React App](https://johntcosta.hashnode.dev/building-a-traffic-light-react-app) exploring how to model UI state as a finite state machine. The key insight was naming states by their **business meaning** rather than their visual representation, like `PriorityStraight` instead of `red-light-green-arrow`.
 
-This post takes those same ideas and applies them to a common React pattern: managing complex UI state with hooks.
-
+That post used class components and MobX. This post takes the same core ideas (state machines and domain-driven naming) and shows how to apply them in modern React with **function components, hooks, and TypeScript discriminated unions**.
 ## The Problem: Boolean Soup
 
 Here's a typical React component managing a blog post editor:
@@ -67,8 +66,8 @@ With boolean soup, nothing prevents `showPublishModal` and `showDiscardModal` fr
 
 Just like naming traffic light states `PriorityStraight` instead of `red-light-green-arrow`, we name our states by what they **mean**, not what they **look like**:
 
-- `'saving-draft'` — not `isSaving && !isPublishing && !showModal`
-- `'confirming-publish'` — not `showPublishModal && !showDiscardModal`
+- `'saving-draft'` instead of `isSaving && !isPublishing && !showModal`
+- `'confirming-publish'` instead of `showPublishModal && !showDiscardModal`
 
 When you read `state.kind === 'confirming-discard'`, you know exactly what's happening.
 
@@ -136,7 +135,7 @@ I've built a live demo with both approaches side-by-side:
 
 **[View Source →](https://github.com/costajohnt/state-machine-blog-post)**
 
-Interact with both editors. Notice how the "After" version displays its current state — you always know exactly what's happening.
+Interact with both editors. Notice how the "After" version displays its current state, so you always know exactly what's happening.
 
 ## When To Use This Pattern
 
@@ -167,4 +166,4 @@ Model those states explicitly. Name them by their domain meaning. Let TypeScript
 
 ---
 
-*See also: [Building a Traffic Light React App](https://johntcosta.hashnode.dev/building-a-traffic-light-react-app) — the original exploration of domain-driven state naming.*
+*See also: [Building a Traffic Light React App](https://johntcosta.hashnode.dev/building-a-traffic-light-react-app), the original exploration of domain-driven state naming.*
